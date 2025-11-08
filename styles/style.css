@@ -1,0 +1,218 @@
+:root {
+  --bitwarden-blue: #175ddc;
+  --bitwarden-blue-dark: #1248a8;
+  --gray-100: #f4f6fb;
+  --gray-300: #d7dce8;
+  --gray-500: #7b8194;
+  --text-color: #1a1f2b;
+  --font-base: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-base);
+  background: #ffffff;
+  color: var(--text-color);
+}
+
+main {
+  padding: 20px 32px 32px;
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--bitwarden-blue), var(--bitwarden-blue-dark));
+  color: #ffffff;
+  padding: 24px 32px 24px;
+}
+
+.hero__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px;
+  margin: 0 0 8px;
+  opacity: 0.85;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.hero__meta {
+  display: flex;
+  gap: 16px;
+  font-size: 14px;
+  margin: 12px 0 0;
+  opacity: 0.9;
+}
+
+.vault-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  background: #ffffff;
+  box-shadow: 0 14px 40px rgba(23, 93, 220, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  table-layout: fixed;
+}
+
+.vault-table th,
+.vault-table td {
+  padding: 16px 18px;
+  vertical-align: top;
+  font-size: 13px;
+}
+
+.vault-table thead th {
+  background: var(--gray-100);
+  border-bottom: 1px solid var(--gray-300);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 12px;
+  color: var(--gray-500);
+}
+
+.vault-table th:first-child,
+.vault-table td:first-child {
+  width: 38%;
+}
+
+.vault-table th:last-child,
+.vault-table td:last-child {
+  width: 62%;
+}
+
+.vault-table tbody tr:nth-child(odd) {
+  background: #ffffff;
+}
+
+.vault-table tbody tr:nth-child(even) {
+  background: #f7f9ff;
+}
+
+.vault-table tbody tr {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.vault-table tbody tr:hover {
+  background: rgba(23, 93, 220, 0.08);
+}
+
+.entry-name {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.entry-meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  color: var(--gray-500);
+  font-size: 12px;
+}
+
+.tag {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--gray-100);
+  border: 1px solid var(--gray-300);
+}
+
+.tag--favorite {
+  background: rgba(255, 215, 0, 0.2);
+  color: #9a7400;
+  border-color: rgba(255, 215, 0, 0.6);
+}
+
+.credentials {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.credential-block {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+  width: 100%;
+}
+
+.credential-label {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.55);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.credential-value {
+  font-size: 14px;
+  font-weight: 600;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.credential-block--user {
+  background: linear-gradient(135deg, rgba(23, 93, 220, 0.12), rgba(23, 93, 220, 0.2));
+  border-color: rgba(23, 93, 220, 0.3);
+}
+
+.credential-block--password {
+  background: linear-gradient(135deg, rgba(255, 115, 0, 0.12), rgba(255, 173, 62, 0.2));
+  border-color: rgba(255, 173, 62, 0.4);
+  font-family: "Fira Code", "Consolas", "Courier New", monospace;
+  letter-spacing: 0.5px;
+  break-inside: avoid;
+}
+
+.credentials-extra {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: var(--gray-500);
+}
+
+.credentials-extra span {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+@media print {
+  body {
+    margin: 0;
+  }
+
+  .vault-table {
+    page-break-inside: auto;
+  }
+
+  .vault-table tbody tr {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .credential-block {
+    page-break-inside: avoid;
+  }
+}
+
+.footer {
+  text-align: center;
+  font-size: 11px;
+  color: var(--gray-500);
+  padding: 16px 0 24px;
+}
