@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="{{style_href}}" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__content">
+        <p class="hero__eyebrow">Bitwarden Export</p>
+        <h1>{{title}}</h1>
+        <p class="hero__meta">
+          <span>Generiert am {{generated}}</span>
+          <span>{{count}} Eintraege</span>
+        </p>
+      </div>
+    </header>
+    <main>
+      <table class="vault-table" role="table">
+        <thead>
+          <tr>
+            <th scope="col">Dienst / Name</th>
+            <th scope="col">Anmeldedaten</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{rows}}
+        </tbody>
+      </table>
+    </main>
+    <footer class="footer">
+      <p>PDF erzeugt aus einem Bitwarden JSON Export.</p>
+    </footer>
+  </body>
+</html>
